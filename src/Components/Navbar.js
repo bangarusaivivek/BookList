@@ -2,10 +2,11 @@ import React,{ useContext } from 'react'
 import { BookContext } from '../Contexts/BookContext'
 
 function Navbar() {
-    useContext(BookContext)
+    const { books } = useContext(BookContext);
     return (
-        <div>
-            
+        <div className="navbar">
+           <h1>Reading List</h1>
+           <p>Currently you have {books.length}</p> 
         </div>
     )
 }
