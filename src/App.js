@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import BookContextProvider from './Contexts/BookContext';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <BookContextProvider >
-        
+        <Navbar />
       </BookContextProvider>
     </div>
   );
