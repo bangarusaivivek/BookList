@@ -1,13 +1,14 @@
-import React,{ createContext, useState } from 'react'
+import React,{ createContext, useState, useReducer } from 'react'
 import uuid from 'uuid/dist/v1';
+import { bookReducer } from '../reducers/bookReducer';
 
 export const BookContext = createContext();
 
 function BookContextProvider(props) {
-    const [books, setBooks] = useState([
-        {title: 'name of the wind', author: 'patrick rothfuss', id: 1},
-        {title: 'the final empire', author: 'brandon sanderson', id: 2},
-    ])
+    // const [books,dispatch] = useReducer(bookReducer,[]);
+
+
+    const [books, setBooks] = useState([])
     const addBook = (title, author) => {
         setBooks([...books,{title: title,author: author,id: uuid()}])
     }
